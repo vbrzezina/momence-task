@@ -1,0 +1,102 @@
+{
+  "root": true,
+  "ignorePatterns": ["node_modules", "public", "config"],
+  "plugins": [
+    "unicorn",
+    "sonarjs",
+    "github",
+    "testing-library",
+    "prettier",
+    "react",
+    "jest",
+    "jsx-a11y"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "linebreak-style": "auto"
+      }
+    ],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "block-scoped-var": "error",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "no-implicit-globals": "error",
+    "no-use-before-define": "off",
+    "no-control-regex": "off",
+    "no-self-compare": "error",
+    "no-duplicate-imports": "error",
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-loop-func": "error",
+    "require-await": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "eqeqeq": "error",
+    "object-shorthand": "error",
+    "no-var": "error",
+    "no-multiple-empty-lines": "error",
+    "no-unneeded-ternary": "error",
+    "default-case-last": "error",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/no-useless-length-check": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-array-find": "error",
+    "unicorn/prefer-array-some": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/no-for-loop": "error",
+    "github/no-then": "warn",
+    "sonarjs/no-duplicate-string": "off",
+    "sonarjs/cognitive-complexity": "warn",
+    "sonarjs/no-identical-functions": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
+        "@typescript-eslint/triple-slash-reference": [
+          "error",
+          { "path": "always", "types": "always", "lib": "always" }
+        ]
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

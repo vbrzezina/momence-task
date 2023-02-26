@@ -1,0 +1,8 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1F3130",
+        "titleBar.activeBackground": "#2C4444",
+        "titleBar.activeForeground": "#F8FBFB"
+    },
+    "jest.jestCommandLine": "node scripts/test.js --testURL=https://www.cnb.cz/",
+}
